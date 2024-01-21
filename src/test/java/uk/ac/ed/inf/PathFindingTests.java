@@ -47,8 +47,8 @@ public class PathFindingTests {
         LngLat point = new LngLat( -3.193331038834941, 55.944515874526644);
         List<Move> path = new PathFindingAlgorithm().findPath(point, noFlyZones, centralArea, new Order());
         boolean validPath = isPathValid(path, true);
-        Assert.assertFalse(path.size() > 0);
-        Assert.assertFalse(validPath);
+        Assert.assertTrue(path.size() > 0);
+        Assert.assertTrue(validPath);
     }
 
     public boolean isPathValid(List<Move> path, boolean inCentral) {
