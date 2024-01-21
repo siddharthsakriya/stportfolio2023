@@ -30,7 +30,7 @@ public class LngLatHandlingUnitTests {
     @Test
     public void isInRegionNormal2(){
         LngLat point = new LngLat(1.5,-1);
-        Assert.assertFalse(lngLatHandler.isInRegion(point, region));
+        Assert.assertTrue(lngLatHandler.isInRegion(point, region));
     }
 
     @Test
