@@ -46,9 +46,25 @@ jobs:
       - name: Build with Maven
         run: mvn test --file pom.xml
 
-    # Deployment stage (this is the final stage where the code is deployed to Docker Image)
+  build_package:
+
+    runs-on: ubuntu-latest
+    needs: build_test
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+
+  # Deployment stage (this is the final stage where the code is deployed to Docker Image)
   publish-job:
     runs-on: ubuntu-latest
+    needs: build_package
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
