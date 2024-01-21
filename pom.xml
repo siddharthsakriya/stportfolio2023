@@ -60,7 +60,7 @@
     <dependency>
       <groupId>uk.ac.ed.inf.ilp</groupId>
       <artifactId>IlpDataObjects</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+<!--      <version>1.0.0-SNAPSHOT</version>-->
       <scope>system</scope>
       <systemPath>${project.basedir}/IlpDataObjects.jar</systemPath>
     </dependency>
