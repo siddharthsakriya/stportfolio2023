@@ -5,7 +5,7 @@ It is close to being completed with the final step being outputting all the dron
 
 ## The Task
 
-In essence, the goal was to find a path from the start point to a goal, and back. The scenario set out for us was that the program was a order processing and pathfinding system for a pizza delivery drone which delivers pizzas to Appleton Tower. The drone was only allowed to move in the 16 cardinal directions for a fixed distance at a time.
+In essence, the goal was to find a path from the start point to a end goal, and back. The scenario set out for us was that the program was a order processing and pathfinding system for a pizza delivery drone which delivers pizzas to Appleton Tower. The drone was only allowed to move in the 16 cardinal directions for a fixed distance at a time.
 One step in a cardinal direction was referred to as a 'move'. The system is to be data-driven, utilising the latest data from the rest server.
 
 ## The Solution
