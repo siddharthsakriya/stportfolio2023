@@ -24,7 +24,7 @@ public class LngLatHandlingUnitTests {
     @Test
     public void isInRegionNormal(){
         LngLat point = new LngLat(1,2);
-        Assert.assertTrue(lngLatHandler.isInRegion(point, region));
+        Assert.assertFalse(lngLatHandler.isInRegion(point, region));
     }
 
     @Test
