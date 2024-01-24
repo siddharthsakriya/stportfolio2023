@@ -1,11 +1,4 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
-
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-name: Java CI with Maven
+name: Java CI/CD Pipeline with Maven
 
 on:
   push:
@@ -14,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  # Developement/Build stage (not actually building here, this is a preliminary stage to not cache dependencies)
+  # Developement/Build stage (To remove any cached data)
   build_clean:
 
     runs-on: ubuntu-latest
@@ -30,7 +23,7 @@ jobs:
       - name: Build with Maven
         run: mvn clean --file pom.xml
 
-  # Building -> Testing stage (when you do maven test, it builds the code base to be tested on)
+  # Building -> Testing stage (Code is built, then tested)
   build_test:
 
     runs-on: ubuntu-latest
@@ -61,7 +54,7 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-  # Deployment stage (this is the final stage where the code is deployed to Docker Image)
+  # Deployment stage (Repo is pushed to a Docker Image)
   publish-job:
     runs-on: ubuntu-latest
     needs: build_package
